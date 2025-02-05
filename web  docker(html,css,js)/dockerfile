@@ -1,0 +1,14 @@
+# Use a lightweight web server image
+FROM nginx:latest
+
+# Set working directory
+WORKDIR /usr/share/nginx/html
+
+# Copy your web application files to the container
+COPY . .
+
+# Expose port 80 to access the application
+EXPOSE 80
+
+# No additional commands as nginx automatically serves the files
+

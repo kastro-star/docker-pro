@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <button class="new-conversation">+ New Conversation</button>
+            <button class="clear-conversations">Clear Conversations</button>
+            <div class="info">
+                <p>by: @xtekky</p>
+                <p>version: 0.0.1-beta</p>
+                <p>release: 2023-04-18</p>
+            </div>
+        </div
+        <div class="chat-area">
+            <!-- Chat messages will appear here -->
+        </div>
+
+        <div class="footer">
+            <div class="options">
+                <label>
+                    <input type="checkbox" id="web-access"> Web Access
+                </label>
+                <select id="model-select" aria-label="Select AI Model">
+                    <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+                </select>
+                <select id="mode-select" aria-label="Select Mode">
+                    <option value="default">default</option>
+                </select>
+            </div>
+            <textarea placeholder="fcfgcgrf"></textarea>
+          
+            <button class="send-button">Send</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
