@@ -1,0 +1,8 @@
+my portfolio's repositories dockerfile
+
+
+this dockerfile file is used build an image in the dockerdesktop 
+
+modifies docker file to made changes for your needs
+
+run the docker file at port:3000

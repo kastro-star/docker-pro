@@ -1,0 +1,32 @@
+# Start with Node 18.17.0 as base
+FROM node:18.17.0
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files first
+COPY package*.json ./
+
+# Install dependencies with specific versions and legacy peer deps
+RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application
+COPY . .
+
+# Install specific packages with fixed versions
+RUN npm install next@13.4.19 react@18.2.0 react-dom@18.2.0 --legacy-peer-deps
+RUN npm install tailwindcss@3.3.3 postcss autoprefixer --legacy-peer-deps
+RUN npm install framer-motion@11.0.8 react-intersection-observer --legacy-peer-deps
+RUN npm install @heroicons/react react-icons react-simple-typewriter react-social-icons --legacy-peer-deps
+
+# Clear npm cache and remove unnecessary files
+RUN npm cache clean --force
+
+# Build the application
+RUN npm run build
+
+# Expose port 3000
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "start"]
